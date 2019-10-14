@@ -1,0 +1,37 @@
+﻿Module Module1
+
+    Sub Main()
+        Dim letters, specials, string1, nextchar, numbers As String
+        Dim count As Integer
+
+        letters = ""
+        numbers = ""
+        specials = ""
+        string1 = ""
+        count = 0
+        nextchar = ""
+
+        Console.Write("Kindly enter your string: ")
+        string1 = Console.ReadLine
+
+        For count = 1 To Len(string1)
+            nextchar = Mid(string1, count, 1)
+
+            If UCase(nextchar >= "a" And nextchar <= "z") Then
+                letters = letters + nextchar
+
+            ElseIf nextchar >= "0" And nextchar <= "9" Then
+                numbers = numbers + nextchar
+            Else
+                specials = specials + nextchar
+            End If
+
+        Next
+
+        Console.WriteLine("specials: " & specials)
+        Console.WriteLine("numbers: " & numbers)
+        Console.WriteLine("letters: " & letters)
+        Console.ReadKey()
+    End Sub
+
+End Module
